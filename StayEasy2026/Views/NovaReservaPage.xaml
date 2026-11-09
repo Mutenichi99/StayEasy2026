@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StayEasy2026.Views.NovaReservaPage"
+             Title="Nova reserva" BackgroundColor="{StaticResource Navy}">
+  <ScrollView>
+    <VerticalStackLayout Padding="22,22,22,44" Spacing="19"
+                         MaximumWidthRequest="760" HorizontalOptions="Fill">
+      <VerticalStackLayout Spacing="5">
+        <Label Text="Monte sua hospedagem" Style="{StaticResource PageTitle}" />
+        <Label Text="Preencha os campos para ver a estimativa da sua reserva."
+               Style="{StaticResource BodyMuted}" />
+      </VerticalStackLayout>
+
+      <Border BackgroundColor="{StaticResource Surface}" Stroke="{StaticResource Line}"
+              StrokeThickness="1" StrokeShape="RoundRectangle 20" Padding="18">
+        <VerticalStackLayout Spacing="12">
+          <Label Text="01  •  DADOS DO HÓSPEDE" FontAttributes="Bold" FontSize="12"
+                 TextColor="{StaticResource Gold}" />
+          <Label Text="Nome do responsável" Style="{StaticResource InputLabel}" />
+          <Entry x:Name="NomeEntry" Placeholder="Ex.: Maria Oliveira"
+                 Style="{StaticResource TextEntry}" Keyboard="Text" />
+          <Label Text="O nome deve ter pelo menos 3 caracteres."
+                 Style="{StaticResource BodyMuted}" FontSize="12" />
+        </VerticalStackLayout>
+      </Border>
+
+      <Border BackgroundColor="{StaticResource Surface}" Stroke="{StaticResource Line}"
+              StrokeThickness="1" StrokeShape="RoundRectangle 20" Padding="18">
+        <VerticalStackLayout Spacing="12">
+          <Label Text="02  •  ACOMODAÇÃO" FontAttributes="Bold" FontSize="12"
+                 TextColor="{StaticResource Gold}" />
+          <Label Text="Selecione a suíte" Style="{StaticResource InputLabel}" />
+          <Picker x:Name="QuartoPicker" Title="Escolha uma suíte"
+                  Style="{StaticResource SelectPicker}"
+                  SelectedIndexChanged="OnQuartoAlterado" />
+          <Label x:Name="DescricaoQuartoLabel" Style="{StaticResource BodyMuted}" />
+          <Grid ColumnDefinitions="*,Auto">
+            <Label Text="Preço por diária" Style="{StaticResource BodyMuted}" VerticalOptions="Center" />
+            <Label x:Name="PrecoDiariaLabel" Grid.Column="1" FontSize="20"
+                   FontAttributes="Bold" TextColor="{StaticResource Gold}" />
+          </Grid>
+        </VerticalStackLayout>
+      </Border>
+
+      <Border BackgroundColor="{StaticResource Surface}" Stroke="{StaticResource Line}"
+              StrokeThickness="1" StrokeShape="RoundRectangle 20" Padding="18">
+        <VerticalStackLayout Spacing="11">
+          <Label Text="03  •  HÓSPEDES" FontAttributes="Bold" FontSize="12"
+                 TextColor="{StaticResource Gold}" />
+          <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
+            <VerticalStackLayout Spacing="4" VerticalOptions="Center">
+              <Label Text="Adultos" Style="{StaticResource InputLabel}" />
+              <Label x:Name="AdultosLabel" Text="1 adulto" Style="{StaticResource BodyMuted}" />
+            </VerticalStackLayout>
+            <Stepper Grid.Column="1" x:Name="AdultosStepper" Minimum="1" Maximum="5"
+                     Increment="1" Value="1" ValueChanged="OnHospedesAlterados"
+                     HorizontalOptions="End" />
+          </Grid>
+          <BoxView Color="{StaticResource Line}" HeightRequest="1" />
+          <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
+            <VerticalStackLayout Spacing="4" VerticalOptions="Center">
+              <Label Text="Crianças" Style="{StaticResource InputLabel}" />
+              <Label x:Name="CriancasLabel" Text="0 crianças" Style="{StaticResource BodyMuted}" />
+            </VerticalStackLayout>
+            <Stepper Grid.Column="1" x:Name="CriancasStepper" Minimum="0" Maximum="4"
+                     Increment="1" Value="0" ValueChanged="OnHospedesAlterados"
+                     HorizontalOptions="End" />
+          </Grid>
+        </VerticalStackLayout>
+      </Border>
+
+      <Border BackgroundColor="{StaticResource Surface}" Stroke="{StaticResource Line}"
+              StrokeThickness="1" StrokeShape="RoundRectangle 20" Padding="18">
+        <VerticalStackLayout Spacing="12">
+          <Label Text="04  •  PERÍODO" FontAttributes="Bold" FontSize="12"
+                 TextColor="{StaticResource Gold}" />
+          <Label Text="Check-in (entrada)" Style="{StaticResource InputLabel}" />
+          <DatePicker x:Name="EntradaPicker" Style="{StaticResource SelectDate}"
+                      DateSelected="OnEntradaAlterada" />
+          <Label Text="Check-out (saída)" Style="{StaticResource InputLabel}" />
+          <DatePicker x:Name="SaidaPicker" Style="{StaticResource SelectDate}"
+                      DateSelected="OnSaidaAlterada" />
+          <Label Text="A saída deve ser posterior à entrada. Máximo: 30 diárias."
+                 Style="{StaticResource BodyMuted}" FontSize="12" />
+        </VerticalStackLayout>
+      </Border>
+
+      <Border BackgroundColor="{StaticResource SurfaceSoft}" Stroke="{StaticResource Gold}"
+              StrokeThickness="1" StrokeShape="RoundRectangle 20" Padding="20">
+        <VerticalStackLayout Spacing="9">
+          <Label Text="RESUMO DA ESTIMATIVA" FontSize="12" FontAttributes="Bold"
+                 TextColor="{StaticResource Gold}" CharacterSpacing="1" />
+          <Grid ColumnDefinitions="*,Auto">
+            <Label Text="Período selecionado" Style="{StaticResource BodyMuted}" />
+            <Label x:Name="DiariasLabel" Grid.Column="1" Text="2 diárias"
+                   TextColor="{StaticResource White}" FontAttributes="Bold" />
+          </Grid>
+          <Grid ColumnDefinitions="*,Auto">
+            <Label Text="Quantidade de hóspedes" Style="{StaticResource BodyMuted}" />
+            <Label x:Name="TotalHospedesLabel" Grid.Column="1" Text="1"
+                   TextColor="{StaticResource White}" FontAttributes="Bold" />
+          </Grid>
+          <BoxView Color="{StaticResource Line}" HeightRequest="1" />
+          <Grid ColumnDefinitions="*,Auto">
+            <Label Text="VALOR TOTAL" TextColor="{StaticResource White}"
+                   FontAttributes="Bold" VerticalOptions="Center" />
+            <Label x:Name="TotalLabel" Grid.Column="1" Text="R$ 0,00"
+                   FontSize="25" FontAttributes="Bold" TextColor="{StaticResource Gold}" />
+          </Grid>
+        </VerticalStackLayout>
+      </Border>
+      <Button x:Name="ConfirmarButton" Text="Confirmar reserva  ✓"
+              Style="{StaticResource PrimaryButton}" Clicked="OnConfirmarClicked" />
+      <Label Text="Projeto demonstrativo: nenhuma cobrança real é realizada."
+             Style="{StaticResource BodyMuted}" HorizontalTextAlignment="Center" FontSize="12" />
+    </VerticalStackLayout>
+  </ScrollView>
+</ContentPage>

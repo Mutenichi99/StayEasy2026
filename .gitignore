@@ -1,0 +1,10 @@
+# Visual Studio / .NET / MAUI
+.vs/
+**/bin/
+**/obj/
+*.user
+*.suo
+*.cache
+*.log
+TestResults/
+.DS_Store

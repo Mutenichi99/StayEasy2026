@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StayEasy2026.Views.ConfirmacaoPage"
+             Title="Reserva confirmada" BackgroundColor="{StaticResource Navy}">
+  <ScrollView>
+    <VerticalStackLayout Padding="22,30,22,44" Spacing="18"
+                         MaximumWidthRequest="760" HorizontalOptions="Fill">
+      <Border BackgroundColor="{StaticResource SurfaceSoft}" StrokeThickness="0"
+              StrokeShape="RoundRectangle 24" Padding="24">
+        <VerticalStackLayout Spacing="9" HorizontalOptions="Center">
+          <Label Text="✓" FontSize="58" FontAttributes="Bold" TextColor="{StaticResource Positive}"
+                 HorizontalTextAlignment="Center" />
+          <Label Text="Reserva confirmada!" Style="{StaticResource PageTitle}"
+                 HorizontalTextAlignment="Center" />
+          <Label Text="Os dados foram salvos neste dispositivo." Style="{StaticResource BodyMuted}"
+                 HorizontalTextAlignment="Center" />
+          <Label x:Name="CodigoLabel" Text="#XXXXXXXX" TextColor="{StaticResource Gold}"
+                 FontSize="22" FontAttributes="Bold" HorizontalTextAlignment="Center" />
+        </VerticalStackLayout>
+      </Border>
+      <Border BackgroundColor="{StaticResource Surface}" Stroke="{StaticResource Line}"
+              StrokeThickness="1" StrokeShape="RoundRectangle 20" Padding="20">
+        <VerticalStackLayout Spacing="13">
+          <Label Text="COMPROVANTE DA HOSPEDAGEM" FontSize="12" FontAttributes="Bold"
+                 TextColor="{StaticResource Gold}" />
+          <Label Text="Hóspede" Style="{StaticResource BodyMuted}" />
+          <Label x:Name="HospedeLabel" TextColor="{StaticResource White}" FontSize="17" FontAttributes="Bold" />
+          <BoxView Color="{StaticResource Line}" HeightRequest="1" />
+          <Label Text="Acomodação" Style="{StaticResource BodyMuted}" />
+          <Label x:Name="QuartoLabel" TextColor="{StaticResource White}" FontSize="17" FontAttributes="Bold" />
+          <Label Text="Período" Style="{StaticResource BodyMuted}" />
+          <Label x:Name="PeriodoLabel" TextColor="{StaticResource White}" />
+          <Label Text="Hóspedes" Style="{StaticResource BodyMuted}" />
+          <Label x:Name="HospedesLabel" TextColor="{StaticResource White}" />
+          <Label x:Name="DiariasLabel" Style="{StaticResource BodyMuted}" />
+          <BoxView Color="{StaticResource Line}" HeightRequest="1" />
+          <Label Text="VALOR TOTAL" FontSize="12" FontAttributes="Bold" TextColor="{StaticResource Gold}" />
+          <Label x:Name="TotalLabel" FontSize="34" FontAttributes="Bold" TextColor="{StaticResource Gold}" />
+        </VerticalStackLayout>
+      </Border>
+      <Button Text="Consultar minhas reservas" Style="{StaticResource PrimaryButton}"
+              Clicked="OnMinhasReservasClicked" />
+      <Button Text="Voltar ao início" Style="{StaticResource SecondaryButton}"
+              Clicked="OnVoltarInicioClicked" />
+      <Label Text="Reserva fictícia para fins acadêmicos. Não representa compra real."
+             Style="{StaticResource BodyMuted}" HorizontalTextAlignment="Center" FontSize="12" />
+    </VerticalStackLayout>
+  </ScrollView>
+</ContentPage>

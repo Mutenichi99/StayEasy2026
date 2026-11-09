@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StayEasy2026.Views.SobrePage"
+             Title="Sobre o aplicativo" BackgroundColor="{StaticResource Navy}">
+  <ScrollView>
+    <VerticalStackLayout Padding="22,24,22,44" Spacing="18"
+                         MaximumWidthRequest="760" HorizontalOptions="Fill">
+      <Label Text="Sobre o StayEasy" Style="{StaticResource PageTitle}" />
+      <Label Text="Versão 2.0 • Visual Studio 2026 • .NET MAUI 10"
+             Style="{StaticResource BodyMuted}" />
+      <Border BackgroundColor="{StaticResource Surface}" Stroke="{StaticResource Line}"
+              StrokeThickness="1" StrokeShape="RoundRectangle 20" Padding="20">
+        <VerticalStackLayout Spacing="13">
+          <Label Text="PROGRAMAÇÃO MOBILE I — AGENDA 14" TextColor="{StaticResource Gold}"
+                 FontSize="12" FontAttributes="Bold" />
+          <Label Text="Aplicativo acadêmico de reservas de hospedagem"
+                 Style="{StaticResource SectionTitle}" />
+          <Label Text="O StayEasy demonstra navegação entre telas, personalização da interface, validação de campos e datas, cálculo de diárias e armazenamento local em JSON."
+                 Style="{StaticResource BodyMuted}" />
+        </VerticalStackLayout>
+      </Border>
+      <Border BackgroundColor="{StaticResource SurfaceSoft}" StrokeThickness="0"
+              StrokeShape="RoundRectangle 20" Padding="20">
+        <VerticalStackLayout Spacing="12">
+          <Label Text="Conceitos aplicados" Style="{StaticResource SectionTitle}" />
+          <Label Text="✓  Classes e objetos (Quarto e Reserva)" TextColor="{StaticResource White}" />
+          <Label Text="✓  Propriedades e encapsulamento" TextColor="{StaticResource White}" />
+          <Label Text="✓  Listas de objetos (List&lt;T&gt;)" TextColor="{StaticResource White}" />
+          <Label Text="✓  Validação de DatePicker" TextColor="{StaticResource White}" />
+          <Label Text="✓  Eventos e navegação entre páginas" TextColor="{StaticResource White}" />
+          <Label Text="✓  Persistência com arquivo JSON local" TextColor="{StaticResource White}" />
+        </VerticalStackLayout>
+      </Border>
+      <Label Text="Aviso: este aplicativo é uma simulação. Ele não faz pagamentos nem reservas reais."
+             Style="{StaticResource BodyMuted}" />
+      <Button Text="Voltar ao início" Style="{StaticResource PrimaryButton}"
+              Clicked="OnVoltarClicked" />
+    </VerticalStackLayout>
+  </ScrollView>
+</ContentPage>

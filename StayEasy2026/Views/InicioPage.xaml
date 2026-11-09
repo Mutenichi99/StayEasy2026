@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="StayEasy2026.Views.InicioPage"
+             Title="Início" NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource Navy}">
+  <ScrollView>
+    <VerticalStackLayout Padding="22,26,22,46" Spacing="20"
+                         MaximumWidthRequest="760" HorizontalOptions="Fill">
+      <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+        <Border BackgroundColor="{StaticResource Gold}" StrokeThickness="0"
+                WidthRequest="50" HeightRequest="50" StrokeShape="RoundRectangle 15">
+          <Label Text="S" FontSize="28" FontAttributes="Bold" TextColor="{StaticResource Navy}"
+                 VerticalOptions="Center" HorizontalOptions="Center" />
+        </Border>
+        <VerticalStackLayout Grid.Column="1" Spacing="1" VerticalOptions="Center">
+          <Label Text="STAYEASY" FontSize="20" FontAttributes="Bold"
+                 CharacterSpacing="2" TextColor="{StaticResource White}" />
+          <Label Text="RESERVAS • EDIÇÃO 2026" FontSize="10" CharacterSpacing="2"
+                 TextColor="{StaticResource Gold}" />
+        </VerticalStackLayout>
+      </Grid>
+
+      <Border BackgroundColor="{StaticResource Surface}" Stroke="{StaticResource Line}"
+              StrokeThickness="1" StrokeShape="RoundRectangle 24" Padding="20">
+        <VerticalStackLayout Spacing="13">
+          <Label Text="BEM-VINDO AO STAYEASY" TextColor="{StaticResource Gold}"
+                 FontSize="11" FontAttributes="Bold" CharacterSpacing="1.3" />
+          <Label Text="Uma estadia especial começa aqui." Style="{StaticResource PageTitle}" />
+          <Label Text="Escolha a suíte, selecione as datas e consulte o preço total na hora."
+                 Style="{StaticResource BodyMuted}" />
+          <Image Source="hotel_hero.png" HeightRequest="185" Aspect="AspectFit" />
+          <Button Text="Reservar acomodação  →" Style="{StaticResource PrimaryButton}"
+                  Clicked="OnNovaReservaClicked" />
+          <Button Text="Ver minhas reservas" Style="{StaticResource SecondaryButton}"
+                  Clicked="OnMinhasReservasClicked" />
+        </VerticalStackLayout>
+      </Border>
+
+      <Label Text="Uma experiência simples" Style="{StaticResource SectionTitle}" />
+      <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+        <Border Grid.Column="0" BackgroundColor="{StaticResource SurfaceSoft}"
+                StrokeThickness="0" StrokeShape="RoundRectangle 18" Padding="14">
+          <VerticalStackLayout Spacing="7">
+            <Label Text="01 / CONFORTO" FontSize="11" FontAttributes="Bold" TextColor="{StaticResource Gold}" />
+            <Label Text="3 tipos de suíte" FontSize="17" FontAttributes="Bold" TextColor="{StaticResource White}" />
+            <Label Text="Preços claros e capacidade informada." Style="{StaticResource BodyMuted}" />
+          </VerticalStackLayout>
+        </Border>
+        <Border Grid.Column="1" BackgroundColor="{StaticResource SurfaceSoft}"
+                StrokeThickness="0" StrokeShape="RoundRectangle 18" Padding="14">
+          <VerticalStackLayout Spacing="7">
+            <Label Text="02 / CONTROLE" FontSize="11" FontAttributes="Bold" TextColor="{StaticResource Gold}" />
+            <Label Text="Tudo calculado" FontSize="17" FontAttributes="Bold" TextColor="{StaticResource White}" />
+            <Label Text="Diárias automáticas e histórico local." Style="{StaticResource BodyMuted}" />
+          </VerticalStackLayout>
+        </Border>
+      </Grid>
+
+      <Border BackgroundColor="{StaticResource Surface}" StrokeThickness="0"
+              StrokeShape="RoundRectangle 18" Padding="18">
+        <Grid ColumnDefinitions="*,Auto">
+          <VerticalStackLayout Spacing="4">
+            <Label Text="Reservas salvas no seu dispositivo" Style="{StaticResource BodyMuted}" />
+            <Label x:Name="QuantidadeLabel" Text="0 reservas" FontSize="21" FontAttributes="Bold"
+                   TextColor="{StaticResource White}" />
+          </VerticalStackLayout>
+          <Label Grid.Column="1" Text="●" FontSize="26" TextColor="{StaticResource Gold}"
+                 VerticalOptions="Center" />
+        </Grid>
+      </Border>
+      <Button Text="Sobre o projeto" Style="{StaticResource SecondaryButton}"
+              Clicked="OnSobreClicked" />
+      <Label Text="Projeto acadêmico • Programação Mobile I • .NET MAUI 10"
+             TextColor="{StaticResource Muted}" FontSize="11" HorizontalTextAlignment="Center" />
+    </VerticalStackLayout>
+  </ScrollView>
+</ContentPage>
