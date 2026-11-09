@@ -1,6 +1,6 @@
 # StayEasy 2026 — Reservas de Hospedagem
 
-Aplicativo acadêmico para a **Agenda 14 de Programação Mobile I**, desenvolvido com **C#**, **XAML** e **.NET MAUI 10**, para uso no **Visual Studio 2026 (18.x)**.
+Aplicativo acadêmico.
 
 > Projeto demonstrativo: não efetua pagamentos nem reservas reais.
 
