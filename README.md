@@ -55,27 +55,3 @@ StayEasy2026/
   Platforms/                       - Android e Windows
   Resources/                       - splash, ícone e arte SVG
 ```
-
-## Orientação a objetos (Agenda 14)
-
-A classe `Quarto` possui propriedades de leitura e validação no construtor. `CatalogoQuartos.Criar()` retorna uma `List<Quarto>` que alimenta o Picker. A classe `Reserva` guarda o estado de uma reserva e concentra métodos de validação e propriedades calculadas (`Diarias`, `PrecoTotal`). O repositório armazena uma lista de reservas em JSON usando `FileSystem.AppDataDirectory`.
-
-## Testes sugeridos
-
-1. Criar uma reserva válida (ex.: 2 noites, 2 adultos, Suíte Essencial).
-2. Conferir se o total muda conforme o quarto ou as datas.
-3. Usar uma suíte com capacidade 2 e tentar 3 pessoas: deve exibir aviso.
-4. Tentar reservar sem nome: deve exibir aviso.
-5. Conferir se a saída ocorre depois da entrada.
-6. Ver o comprovante, acessar Minhas reservas e cancelar uma delas.
-7. Fechar e abrir de novo para confirmar a persistência.
-
-## Envio no GitHub
-
-Crie um **repositório novo** no seu GitHub e publique os arquivos da pasta extraída, mantendo `StayEasy2026.sln` na raiz. Não inclua as pastas `bin`, `obj` ou `.vs` (cobertas pelo `.gitignore`). Compartilhe um link no formato `https://github.com/SEU-USUARIO/NOME-DO-REPOSITORIO`.
-
-Veja `GUIA_DE_ENTREGA.md` para saber exatamente quais prints capturar e como publicar pelo Visual Studio 2026.
-
-## Observação técnica
-
-Os arquivos e vínculos XAML/C# passaram por verificações estáticas neste ambiente. **Não foi realizada uma compilação real em Visual Studio/Windows**, pois o ambiente de geração é Linux e não possui a carga de trabalho MAUI. Se o Visual Studio apresentar algum erro, capture a *Lista de Erros* com o código e a mensagem.
